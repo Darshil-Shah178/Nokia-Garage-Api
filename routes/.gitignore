@@ -1,0 +1,11 @@
+
+# Created by https://www.toptal.com/developers/gitignore/api/react,visualstudiocode,node
+# Edit at https://www.toptal.com/developers/gitignore?templates=react,visualstudiocode,node
+
+### Node ###
+
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+config.env
