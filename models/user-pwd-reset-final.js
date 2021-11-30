@@ -1,4 +1,4 @@
-﻿var UserPasswordResetFinal = function(cnf) {
+﻿const UserPasswordResetFinal = function(cnf) {
     this.email = cnf.email;
     this.newPassword = cnf.newPassword,
     this.newPasswordConfirm = cnf.newPasswordConfirm,

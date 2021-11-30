@@ -1,6 +1,6 @@
-﻿var UserController = function (userModel) {
+﻿const UserController = function (userModel) {
 
-        var crypto = require('crypto'),
+    const crypto = require('crypto'),
         uuid = require('node-uuid'),
         ApiResponse = require('../models/api-response.js'),
         ApiMessages = require('../models/api-messages.js'),
@@ -8,7 +8,7 @@
 
     // TODO: Implement login, logout and changePassword methods. 
 
-    var readAllUsers = function (callback) {
+    const readAllUsers = function (callback) {
 
         userModel.find(function (err, users) {
 
@@ -16,7 +16,7 @@
                 return callback(err, new ApiResponse({ success: false, extras: { msg: ApiMessages.DB_ERROR } }));
             } 
 
-            var userProfileModels = [];
+            const userProfileModels = [];
 
             users.forEach(function (user) {
                 userProfileModel = new UserProfile({
@@ -32,7 +32,7 @@
         });
     };
 
-    var readUser = function (id, callback) {
+    const readUser = function (id, callback) {
         
         userModel.findById(id, function (err, user) {
 
@@ -57,7 +57,7 @@
         });
     };
 
-    var createUser = function (user, callback) {
+    const createUser = function (user, callback) {
 
         // TODO: Error if user already exists.
         // TODO: Hash Password.
@@ -78,7 +78,7 @@
         });        
     };
 
-    var updateUser = function (userIn, callback) {
+    const updateUser = function (userIn, callback) {
 
         userModel.update(
             // Condition
@@ -94,13 +94,13 @@
         );
     };
 
-    var deleteUser = function (id, callback) {
+    const deleteUser = function (id, callback) {
         userModel.remove({ _id: id }, function (err, user) {
             callback(err, user);
         });
     };
 
-    var userIsValid = function(email, password, callback) {
+    const userIsValid = function(email, password, callback) {
 
         userModel.findOne({ email: email }, function (err, user) {
 
@@ -113,7 +113,7 @@
 
             // Compare user's password hash with provided password's hash.
 
-            var userPasswordHash = user.passwordHash,
+            const userPasswordHash = user.passwordHash,
                 userPasswordSalt = user.passwordSalt;
 
             hashPassword(password, userPasswordSalt, function (err, derivedPasswordHash) {
@@ -141,9 +141,9 @@
         });
     }
 
-    var hashPassword = function (password, salt, callback) {        
+    const hashPassword = function (password, salt, callback) {        
         // we use pbkdf2 to hash and iterate 10k times by default 
-        var iterations = 1000,
+        const iterations = 1000,
             keyLen = 64; // 64 bit.
         crypto.pbkdf2(password, salt, iterations, keyLen, callback);
     };

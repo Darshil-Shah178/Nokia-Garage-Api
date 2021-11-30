@@ -1,17 +1,22 @@
 const express = require('express');
 const router = express.Router();
-
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 
 // get a list of users from db
-router.get('/users', (req, res, next) => {
-    User.find({})
-    .then( user => res.send(user) );
+router.get('/users', async (req, res, next) => {
+    
+    try {
+      const user = await User.find({});
+      res.send(user);
+    } catch (e){
+      console.error('post user',e);
+      next;
+  }
 });
 
 
-// add a new hotel to db
+// add a new user to db
 router.post('/users', async (req, res, next) => {
     try {
         const user = req.body;
@@ -41,23 +46,27 @@ router.post('/users', async (req, res, next) => {
     }
   });
 
-//update a hotel in db
-router.put('/users/:id', (req, res, next) => {
-    User.findByIdAndUpdate({_id: req.params.id}, req.body)
-    .then(() => {
-        User.findOne({_id: req.params.id})
-        .then( user => {
-            res.send(user);
-        });
-    });
+//update a user in db
+router.put('/users/:id', async (req, res, next) => {
+  try {
+    const user = await User.findByIdAndUpdate({_id: req.params.id}, req.body);
+    res.send(user);
+} catch (e){
+    console.error('post user',e);
+    next;
+}
 });
 
-//delete a hotel form db
-router.delete('/users/:id', (req, res, next) => {
-    User.findByIdAndRemove({_id: req.params.id})
-    .then( user => {
-        res.send(user);
-    });
+
+//delete a user form db
+router.delete('/users/:id', async (req, res, next) => {
+    try {
+      const user = await User.findByIdAndRemove({_id: req.params.id});
+      res.send(user);
+  } catch (e){
+      console.error('post user',e);
+      next;
+}
 });
 
 module.exports = router;

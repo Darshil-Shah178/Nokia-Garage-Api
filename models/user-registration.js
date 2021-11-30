@@ -1,4 +1,4 @@
-﻿var UserRegistration = function(cnf) {
+﻿const UserRegistration = function(cnf) {
     this.email = cnf.email,
     this.firstName = cnf.firstName,
     this.lastName = cnf.lastName,

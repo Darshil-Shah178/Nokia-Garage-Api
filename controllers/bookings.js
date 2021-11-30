@@ -1,4 +1,4 @@
-﻿var BookingsController = function (bookingModel) {
+﻿const  BookingsController = function (bookingModel) {
     this.ApiResponse = require('../models/api-response.js');
     this.ApiMessages = require('../models/api-messages.js');
     this.bookingModel = bookingModel;
@@ -6,9 +6,9 @@
 
 BookingsController.prototype.getBookings = function (userId, fromDate, toDate, page, pageSize, sortColumn, sortDir, callback) {
 
-    var me = this;   
+    const me = this;   
 
-    var query = {
+    const query = {
         ownerUserId: userId,
         fromDate: { '$gte': fromDate },
         toDate: { '$lt': toDate }

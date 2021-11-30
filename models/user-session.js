@@ -1,9 +1,9 @@
 ﻿// ./models/user-session.js
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var UserSessionSchema = new Schema({
+const UserSessionSchema = new Schema({
     sessionId: String,
     userId: String
 });

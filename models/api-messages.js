@@ -1,4 +1,4 @@
-﻿var ApiMessages = function () { };
+﻿const ApiMessages = function () { };
 ApiMessages.EMAIL_NOT_FOUND = 1;
 ApiMessages.INVALID_PWD = 2;
 ApiMessages.DB_ERROR = 3;
