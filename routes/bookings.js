@@ -25,7 +25,7 @@ router.post('/bookings',async (req, res, next) => {
             res.send(booking)
         }
         else{
-            if(booking.name == checkBooking.name && booking.dateTimeFrom.toString == checkBooking.dateTimeFrom.toString && booking.dateTimeTo.toString == checkBooking.dateTimeTo.toString){
+            if(booking.name == checkBooking.name && booking.dateTimeFrom.toString == checkBooking.dateTimeFrom.toString && booking.dateTimeTo.toString == checkBooking.dateTimeTo.toString ){
                 res.status(200).json({ message: "This time is already booked" });
             } else {
                 console.log('create whaever',booking);
