@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const Booking = require('../models/booking');
 
 // get a list of bookings from db
@@ -16,23 +15,30 @@ router.get('/bookings', async (req, res, next) => {
 
 // add a new booking to db
 router.post('/bookings',async (req, res, next) => {
-    console.log('body', req.body.dateTimeTo);
     try {
-        const checkBooking = await Booking.findOne({name:req.body.name, dateTimeFrom:req.body.dateTimeFrom, dateTimeTo:req.body.dateTimeTo});
-        const booking = await Booking.create(req.body);
-        if(!checkBooking) {
-            
-            res.send(booking)
+        const startDate = new Date(req.body.dateTimeFrom)
+        startDate.setDate(startDate.getDate())
+        const endDate = new Date(req.body.dateTimeTo)
+        endDate.setDate(endDate.getDate())
+        const checkBooking = await Booking.find({
+            $or: [
+               {$and: [
+                 {dateTimeFrom:{$gte: startDate}}, {dateTimeFrom:{$lte: endDate}}
+               ]},
+               {dateTimeFrom:{$lte: startDate}, dateTimeTo:{$gte: startDate}}
+            ]
+         }).exec();
+        if (checkBooking && checkBooking.length > 0){
+            res.status(200).json({ message: "This time is already booked" });
         }
-        else{
-            if(booking.name == checkBooking.name && booking.dateTimeFrom.toString == checkBooking.dateTimeFrom.toString && booking.dateTimeTo.toString == checkBooking.dateTimeTo.toString ){
-                res.status(200).json({ message: "This time is already booked" });
-            } else {
-                console.log('create whaever',booking);
+        else {
+            req.body.dateTimeFrom = startDate;
+                req.body.dateTimeTo = endDate;
+                const booking = await Booking.create(req.body);
+                console.log('Create New Booking',booking);
                 res.send(booking);
-            }
         }
-        
+         console.log ( checkBooking)
     } catch (e){
         console.log('post booking error', e);
         next
