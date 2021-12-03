@@ -1,4 +1,4 @@
-﻿const  BookingsController = function (bookingModel) {
+﻿const BookingsController = function (bookingModel) {
     this.ApiResponse = require('../models/api-response.js');
     this.ApiMessages = require('../models/api-messages.js');
     this.bookingModel = bookingModel;
@@ -28,5 +28,6 @@ BookingsController.prototype.getBookings = function (userId, fromDate, toDate, p
             return callback(err, new me.ApiResponse({success: true, extras: {bookings: bookings}}));
         });
 };
+
 
 module.exports = BookingsController;

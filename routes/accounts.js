@@ -37,7 +37,7 @@ router.post('/users', async (req, res, next) => {
       // check user password with hashed password stored in the database
       const validPassword = await bcrypt.compare(body.password, user.passwordHash);
       if (validPassword) {
-        res.status(200).json({ message: "Valid password" });
+        res.status(200).json({ message: "Valid password"});
       } else {
         res.status(400).json({ error: "Invalid Password" });
       }

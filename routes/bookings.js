@@ -13,6 +13,17 @@ router.get('/bookings', async (req, res, next) => {
     }
 });
 
+// get a list of bookings from db
+router.get('/bookings/:ownerUserId', async (req, res, next) => {
+    try{
+        const booking = await Booking.find({ownerUserId: req.params.ownerUserId});
+        res.send(booking);
+    } catch(e){
+        console.log('get user booking error', e);
+        next
+    }
+});
+
 // add a new booking to db
 router.post('/bookings',async (req, res, next) => {
     try {
@@ -69,14 +80,3 @@ router.delete('/bookings/:id', async (req, res, next) => {
 });
 
 module.exports = router;
-
-
-
-/* {
-    "ownerUserId":"61a4bc92907b743bf87c30a0",
-    "dateTimeFrom":"2021-11-30T00:00:00.000+00:00",
-    "dateTimeTo":"2021-11-30T00:00:00.000+00:00",
-    "url":"asduh",
-    "name":"Printer 4"
-        
-    } */
