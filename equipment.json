@@ -1,0 +1,35 @@
+{
+"printers": [
+  {"id":"1","name":"FLASHFORGE FDM 3D Printer Guider 2S","thumbnail":"https://i.ibb.co/P6vzNCT/printer.png"},
+  {"id":"2","name":"FLASHFORGE FDM 3D Printer Creator Pro 2","thumbnail":"https://i.ibb.co/P6vzNCT/printer.png"},
+  {"id":"3","name":"Panospace One 3D tulostin","thumbnail":"https://i.ibb.co/P6vzNCT/printer.png"},
+  {"id":"4","name":"FLASHFORGE FDM 3D Printer Guider 2S","thumbnail":"https://i.ibb.co/P6vzNCT/printer.png"},
+  {"id":"5","name":"FLASHFORGE FDM 3D Printer Creator Pro 4","thumbnail":"https://i.ibb.co/P6vzNCT/printer.png"},
+  {"id":"6","name":"FLASHFORGE FDM 3D Printer Guider 5S","thumbnail":"https://i.ibb.co/P6vzNCT/printer.png"},
+  {"id":"7","name":"Panospace Two 3D","thumbnail":"https://i.ibb.co/P6vzNCT/printer.png"}
+],
+
+"vrHeadsets": [
+  {"id":"1","name":"Oculus Quest 2","thumbnail":"https://i.ibb.co/t2WKrcg/vrglasses.png"},
+  {"id":"2","name":"HTC Vive Pro 2","thumbnail":"https://i.ibb.co/t2WKrcg/vrglasses.png"},
+  {"id":"3","name":"HTC Vive Pro 3","thumbnail":"https://i.ibb.co/t2WKrcg/vrglasses.png"},
+  {"id":"4","name":"Oculus Quest 3","thumbnail":"https://i.ibb.co/jTQ2F39/vrheadset.png"},
+  {"id":"5","name":"HTC Vive Pro 4","thumbnail":"https://i.ibb.co/jTQ2F39/vrheadset.png"},
+  {"id":"6","name":"HTC Vive Pro 5","thumbnail":"https://i.ibb.co/JKmSTKh/vr.png"}
+],
+"cameras": [
+  {"id":"1","name":"Sony CyberShot DSC-HX60","thumbnail":"https://i.ibb.co/dgcBZ8Y/camera.png"},
+  {"id":"2","name":"CANON EOS 2000D DSLR","thumbnail":"https://i.ibb.co/dgcBZ8Y/camera.png"},
+  {"id":"3","name":"Blackmagic Design Micro Cinema","thumbnail":"https://i.ibb.co/dgcBZ8Y/camera.png"},
+  {"id":"4","name":"Sony CyberShot DSC-HX70","thumbnail":"https://i.ibb.co/dgcBZ8Y/camera.png"},
+  {"id":"5","name":"H6D-400C MULTI-SHOT","thumbnail":"https://i.ibb.co/dgcBZ8Y/camera.png"}
+],
+"others": [
+  {"id":"1","name":"Sewing Machine","thumbnail":"https://i.ibb.co/dkgLFs6/sewing.png"},
+  {"id":"2","name":"M500S Mouse","thumbnail":"https://i.ibb.co/QYMmgq2/mouse.png"},
+  {"id":"3","name":"JBL LIVE 650BT","thumbnail":"https://i.ibb.co/0fmWVFk/headphones.png"},
+  {"id":"4","name":"Sega controller","thumbnail":"https://i.ibb.co/3MDgn6k/controller.png"},
+  {"id":"5","name":"Walkie talkie","thumbnail":"https://i.ibb.co/mH7gFY6/walkietalkie.png"},
+  {"id":"6","name":"Drill","thumbnail":"https://i.ibb.co/2MVTHxy/drill.png"}
+]
+}

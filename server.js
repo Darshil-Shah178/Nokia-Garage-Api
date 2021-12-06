@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const accountRoutes = require('./routes/accounts')
 const bookingRoutes = require('./routes/bookings')
 
-const port = 30000
+const port = process.env.PORT || 30000
 const dotenv = require('dotenv')
 
 dotenv.config({ path: './config.env' })

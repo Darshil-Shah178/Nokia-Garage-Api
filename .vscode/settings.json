@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/a8699f97-d2a7-4783-95d3-ec95da10b7b9/resourceGroups/NokiaGarage/providers/Microsoft.Web/sites/NokiaGarage",
+    "appService.deploySubpath": "."
+}

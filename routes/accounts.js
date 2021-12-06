@@ -51,10 +51,10 @@ router.post("/login", async (req, res) => {
     if (validPassword) {
       res.status(200).json({ message: "Valid password", _id: user.id });
     } else {
-      res.status(400).json({ error: "Invalid Password" });
+      res.status(200).json({ message: "Invalid Password", _id: "" });
     }
   } else {
-    res.status(401).json({ error: "User does not exist" });
+    res.status(200).json({ message: "User does not exist", _id: "" });
   }
 });
 
