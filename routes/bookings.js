@@ -36,6 +36,25 @@ router.get('/bookings/:id', async (req, res, next) => {
     }
 })
 
+//get a booking by date form db
+router.get(
+    '/bookings/date/:dateTimeFrom&:dateTimeTo',
+    async (req, res, next) => {
+        try {
+            const booking = await Booking.find({
+                dateTimeFrom: {
+                    $gte: new Date(req.params.dateTimeFrom),
+                    $lt: new Date(req.params.dateTimeTo),
+                },
+            })
+            res.send(booking)
+        } catch (e) {
+            console.log('get user booking error', e)
+            next
+        }
+    }
+)
+
 // get a list of Users bookings from db
 router.get('/bookings/users/:ownerUserId', async (req, res, next) => {
     try {
@@ -55,8 +74,10 @@ router.post('/bookings', async (req, res, next) => {
         const startDate = new Date(req.body.dateTimeFrom)
         startDate.setDate(startDate.getDate())
         const endDate = new Date(req.body.dateTimeTo)
+        const itemName = req.body.name
         endDate.setDate(endDate.getDate())
         const checkBooking = await Booking.find({
+            name: itemName,
             $or: [
                 {
                     $and: [
