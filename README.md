@@ -50,49 +50,67 @@
 ##### - ENDPOINTS :
 
 > /equipments
+> 
 > GET
 
 > /articles
+> 
 > GET
 
 > /bookings
+> 
 > GET
+> 
 > POST
 
 > /bookings/:id
+> 
 > GET
+> 
 > PUT
+> 
 > DELETE
 
 > /bookings/users/:ownerUserId
+> 
 > GET
 
 > /bookings/date/:dateTimeFrom&:dateTimeTo
+> 
 > GET
 
 > /users
+> 
 > GET
+> 
 > POST for user sign up
 
 > /login
+> 
 > POST for sign in
 
 > /users/:id
+> 
 > GET
+> 
 > PUT
+> 
 > DELETE
 
 ##### - To Run the api on a local machine :
 
 > clone the main branch then
+> 
 > npm init
+> 
 > npm install
+> 
 > npm start
 
 ## Dependencies
 
 ### package.json
-
+```
 "dependencies": {
 "async": "^1.2.1",
 "bcrypt": "^5.0.1",
@@ -113,7 +131,7 @@
 "pbkdf2": "^3.0.3",
 "prettier": "^2.4.1"
 }
-
+```
 ## License
 
 Free Software, Hell Yeah!
